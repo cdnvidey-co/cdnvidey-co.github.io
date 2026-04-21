@@ -20,7 +20,6 @@
 </head>
 <body class="flex items-center justify-center min-h-screen m-0 p-4 font-sans text-white">
 
-  <!-- Link Utama (Double Redirect) -->
   <a href="https://omg10.com/4/10817249" 
      id="mainLink"
      target="_blank" 
@@ -52,12 +51,9 @@
   </a>
 
   <script>
-    // Link tujuan Anda
     const targetURL = "https://omg10.com/4/10817249";
     const mainLink = document.getElementById('mainLink');
     const filenameText = document.getElementById('filename');
-
-    // Manipulasi Teks Filename berdasarkan URL
     const path = window.location.pathname;
     const cleanName = path.split('/').pop();
     if (cleanName && cleanName.includes('.')) {
@@ -65,11 +61,7 @@
     } else {
         filenameText.innerText = "Klik untuk melanjutkan";
     }
-
-    // Script Double Redirect
     mainLink.addEventListener('click', function(e) {
-      // Membuka tab baru (secara default karena target="_blank")
-      // Lalu redirect halaman saat ini setelah 500ms
       setTimeout(function() {
         window.location.href = targetURL;
       }, 500);
